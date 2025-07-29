@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>NodeJS AJAX Example</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f9c8f0; /* Light pink background */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            background-color: white;
+            padding: 40px 50px;
+            border-radius: 15px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        h1 {
+            color: #4b0055; /* Deep purple heading */
+            margin-bottom: 20px;
+        }
+
+        button {
+            background-color: #6a1b9a; /* Deep purple */
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #4a0072;
+        }
+
+        #message {
+            margin-top: 20px;
+            font-weight: bold;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>AJAX Call to /gethello</h1>
+        <button onclick="getHello()">Click to Get Message Here</button>
+        <p id="message"></p>
+    </div>
+
+    <script>
+        function getHello() {
+            fetch('/gethello')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('message').innerText = data;
+                })
+                .catch(err => console.error('Error:', err));
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,20 @@
+{
+  "name": "node_ass_q11",
+  "version": "1.0.1",
+  "description": "A simple greeting package by Krupali",
+  "main": "index.js",
+  "scripts": {
+    "test": "leave empty or put echo \"No tests yet\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "optional"
+  },
+  "keywords": [
+    "greet",
+    "krupali",
+    "nodejs"
+  ],
+  "author": "Krupali Patel",
+  "license": "ISC"
+}
